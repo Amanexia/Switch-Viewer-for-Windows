@@ -1,0 +1,54 @@
+<Window x:Class="SwitchViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Switch Viewer v0.1"
+        Width="960" Height="600"
+        MinWidth="480" MinHeight="320"
+        Background="#111111"
+        KeyDown="Window_KeyDown">
+    <Grid>
+        <Image x:Name="VideoImage"
+               Stretch="Uniform"
+               HorizontalAlignment="Stretch"
+               VerticalAlignment="Stretch"/>
+
+        <Border VerticalAlignment="Bottom"
+                Background="#CC111111"
+                Padding="10">
+            <DockPanel>
+                <TextBlock x:Name="StatusText"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           Text="Initializing..."
+                           DockPanel.Dock="Left"/>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+                    <TextBlock Text="Volume"
+                               Foreground="White"
+                               VerticalAlignment="Center"
+                               Margin="15,0,6,0"/>
+                    <Slider x:Name="VolumeSlider"
+                            Width="120"
+                            Minimum="0"
+                            Maximum="100"
+                            Value="100"
+                            ValueChanged="VolumeSlider_ValueChanged"/>
+                    <Button x:Name="MuteButton"
+                            Content="Mute"
+                            Margin="8,0,0,0"
+                            Padding="12,4"
+                            Click="MuteButton_Click"/>
+                    <Button Content="Always on top"
+                            Margin="8,0,0,0"
+                            Padding="12,4"
+                            Click="TopButton_Click"/>
+                    <Button Content="Fullscreen"
+                            Margin="8,0,0,0"
+                            Padding="12,4"
+                            Click="FullscreenButton_Click"/>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+    </Grid>
+</Window>
